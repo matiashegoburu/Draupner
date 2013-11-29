@@ -69,6 +69,7 @@
     <Compile Include="Common\NHibernate\NHibernateConfiguration.cs" />
     <Compile Include="Common\Persistence\IUnitOfWork.cs" />
     <Compile Include="Common\Persistence\IUnitOfWorkFactory.cs" />
+    <Compile Include="Common\Persistence\IRepository.cs" />
     <Compile Include="Common\Persistence\NHibernate\GenericNHibernateRepository.cs" />
     <Compile Include="Common\Persistence\NHibernate\NHibernateUnitOfWork.cs" />
     <Compile Include="Common\Persistence\NHibernate\NHibernateUnitOfWorkFactory.cs" />

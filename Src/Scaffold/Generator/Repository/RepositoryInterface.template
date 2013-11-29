@@ -5,7 +5,7 @@ using @(Model.CoreNamespace).Domain.Model;
 
 namespace @(Model.CoreNamespace).Domain.Repositories
 {
-    public interface I@(Model.Entity.Name)Repository
+    public interface I@(Model.Entity.Name)Repository : IRepository<@(Model.Entity.Name)>
     {
         @(Model.Entity.Name) Get(long id);
         void Add(@(Model.Entity.Name) @(Model.Entity.VariableName));

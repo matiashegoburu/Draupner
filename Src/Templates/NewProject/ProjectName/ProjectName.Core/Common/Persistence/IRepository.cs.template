@@ -1,0 +1,16 @@
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace @(Model.CoreNamespace).Common.Persistence
+{
+    public interface IRepository<TEntity>
+    {
+        TEntity Get(long id);
+        void Add(TEntity entity);
+        void Delete(TEntity entity);
+        IList<TEntity> FindAll();
+        Page<TEntity> FindPage(int pageNumber, int pageSize, string sortColumn, SortOrder sortOrder);
+		IQueryable<TEntity> Find();
+        long CountAll();
+    }
+}

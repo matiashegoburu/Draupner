@@ -3,7 +3,7 @@ using @(Model.CoreNamespace).Common.Persistence.NHibernate;
 using @(Model.CoreNamespace).Domain.Model;
 using @(Model.CoreNamespace).Domain.Repositories;
 
-namespace @(Model.CoreNamespace).Repositories
+namespace @(Model.CoreNamespace).Repositories 
 {
     public class @(Model.Entity.Name)Repository : GenericNHibernateRepository<@(Model.Entity.Name)>, I@(Model.Entity.Name)Repository
     {

@@ -4,9 +4,6 @@ using @(Model.CoreNamespace).Common.Transactions;
 using @(Model.CoreNamespace).Domain.Model;
 using @(Model.CoreNamespace).Domain.Repositories;
 using @(Model.WebNamespace).Models;
-using MvcContrib.Pagination;
-using MvcContrib.Sorting;
-using MvcContrib.UI.Grid;
 
 namespace @(Model.WebNamespace).Controllers
 {
@@ -22,14 +19,9 @@ namespace @(Model.WebNamespace).Controllers
         }
 
 		[Transaction]
-        public virtual ActionResult Index(int? page, GridSortOptions sort)
+        public virtual ActionResult Index()
         {
-            var @(Model.Entity.VariableName)s = @(Model.Entity.VariableName)Repository.FindPage(page ?? 1, PageSize, sort.Column, sort.Direction == SortDirection.Ascending ? SortOrder.Ascending: SortOrder.Descending);
-
-            var @(Model.Entity.VariableName)ViewModels = Map<Page<@(Model.Entity.Name)>, IPagination<@(Model.Entity.Name)ViewModel>>(@(Model.Entity.VariableName)s);
-            ViewData["sort"] = sort;
-
-            return View(@(Model.Entity.VariableName)ViewModels);
+            return View(@(Model.Entity.VariableName)Repository.Find());
         }
 
 		[Transaction]

@@ -46,9 +46,11 @@ namespace Scaffold.Generator.Project
             var ignoreTemplate = new Regex("^.*\\.template");
             var ignoreSvn = new Regex("\\.svn");
             fileSystem.CopyDirectory(scaffoldingHome + "\\Templates\\NewProject\\ProjectName\\packages", projectName + "\\packages", ignoreTemplate, ignoreSvn);
+            fileSystem.CopyDirectory(scaffoldingHome + "\\Templates\\NewProject\\ProjectName\\lib", projectName + "\\lib", ignoreTemplate, ignoreSvn);
             fileSystem.CopyDirectory(scaffoldingHome + "\\Templates\\NewProject\\ProjectName\\Tools", projectName + "\\Tools", ignoreTemplate, ignoreSvn);
             fileSystem.CopyDirectory(scaffoldingHome + "\\Templates\\NewProject\\ProjectName\\ProjectName.Web\\Scripts", projectName + "\\" + webNameSpace + "\\Scripts", ignoreTemplate, ignoreSvn);
             fileSystem.CopyDirectory(scaffoldingHome + "\\Templates\\NewProject\\ProjectName\\ProjectName.Web\\Content", projectName + "\\" + webNameSpace + "\\Content", ignoreTemplate, ignoreSvn);
+            fileSystem.CopyDirectory(scaffoldingHome + "\\Templates\\NewProject\\ProjectName\\ProjectName.Web\\Views\\Shared", projectName + "\\" + webNameSpace + "\\Views\\Shared", ignoreTemplate, ignoreSvn);
 
             GenerateFromTemplates(projectName, templateData);
         }

@@ -44,7 +44,7 @@ namespace @(Model.TestNamespace).Controllers
             mocks.ReplayAll();
 
             var sortOptions = new GridSortOptions { Column = "Id", Direction = SortDirection.Ascending };
-            var result = controller.Index(5, sortOptions) as ViewResult;
+            var result = controller.Index() as ViewResult;
             
             mocks.VerifyAll();
 

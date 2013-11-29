@@ -18,10 +18,10 @@
         <add namespace="System.Web.Routing" />
         <add namespace="MvcContrib.UI"/>
         <add namespace="MvcContrib.UI.Html"/>
-        <add namespace="MvcContrib.UI.Grid"/>
         <add namespace="MvcContrib"/>
         <add namespace="MvcContrib.UI.Pager"/>
         <add namespace="MvcContrib.Pagination"/>
+        <add namespace="GridMvc.Html"/>
       </namespaces>
     </pages>
   </system.web.webPages.razor>

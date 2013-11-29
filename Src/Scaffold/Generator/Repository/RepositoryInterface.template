@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using @(Model.CoreNamespace).Common.Persistence;
 using @(Model.CoreNamespace).Domain.Model;
 
@@ -11,6 +12,7 @@ namespace @(Model.CoreNamespace).Domain.Repositories
         void Delete(@(Model.Entity.Name) @(Model.Entity.VariableName));
         IList<@(Model.Entity.Name)> FindAll();
         Page<@(Model.Entity.Name)> FindPage(int pageNumber, int pageSize, string sortColumn, SortOrder sortOrder);
+		IQueryable<@(Model.Entity.Name)> Find();
         long CountAll();
     }
 }

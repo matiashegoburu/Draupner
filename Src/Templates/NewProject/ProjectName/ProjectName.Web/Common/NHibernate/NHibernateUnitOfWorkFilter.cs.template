@@ -15,7 +15,7 @@ namespace @(Model.WebNamespace).Common.NHibernate
             }
         }
          
-        public override void OnActionExecuted(ActionExecutedContext filterContext)
+        public override void OnResultExecuted(ResultExecutedContext filterContext)
         {
             ISession session = CurrentSessionContext.Unbind(SessionFactory);
             session.Flush();

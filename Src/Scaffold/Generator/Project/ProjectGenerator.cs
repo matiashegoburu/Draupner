@@ -94,6 +94,7 @@ namespace Scaffold.Generator.Project
             fileSystem.CreateDirectory(projectName + "\\Tools");
             fileSystem.CreateDirectory(projectName + "\\" + projectName + ".Core");
             fileSystem.CreateDirectory(projectName + "\\" + projectName + ".Core/Common");
+            fileSystem.CreateDirectory(projectName + "\\" + projectName + ".Core/Common/Model");
             fileSystem.CreateDirectory(projectName + "\\" + projectName + ".Core/Common/Logging");
             fileSystem.CreateDirectory(projectName + "\\" + projectName + ".Core/Common/NHibernate");
             fileSystem.CreateDirectory(projectName + "\\" + projectName + ".Core/Common/Persistence");

@@ -1,0 +1,13 @@
+using System.Web.Mvc;
+using @(Model.CoreNamespace).Common.Model;
+using @(Model.CoreNamespace).Common.Persistence;
+
+namespace @(Model.WebNamespace).Common.Mvc
+{
+    public interface ISelectListHelper<TRepository, TEntity>
+        where TRepository : IRepository<TEntity>
+        where TEntity : class, IValuePairBaseEntity
+    {
+        void Load(ViewDataDictionary viewData);
+    }
+}

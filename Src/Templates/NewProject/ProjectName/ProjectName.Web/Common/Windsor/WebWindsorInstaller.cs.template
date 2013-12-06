@@ -4,6 +4,8 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using @(Model.WebNamespace).Controllers;
+using @(Model.WebNamespace).Common.Mvc;
+using @(Model.WebNamespace).Controllers;
 
 namespace @(Model.WebNamespace).Common.Windsor
 {
@@ -12,6 +14,7 @@ namespace @(Model.WebNamespace).Common.Windsor
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(FindControllers().Configure(ConfigureControllers()));
+			container.Register(Component.For(typeof (ISelectListHelper<,>)).ImplementedBy(typeof (SelectListHelper<,>)).LifestyleTransient());
         }
 
         private static Action<ComponentRegistration> ConfigureControllers()

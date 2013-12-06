@@ -241,6 +241,8 @@
     <Compile Include="Common\AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="Common\Logging\ElmahHandleErrorAttribute.cs" />
     <Compile Include="Common\Logging\Log4NetElmahErrorLog.cs" />
+    <Compile Include="Common\Mvc\SelectListHelper.cs" />
+    <Compile Include="Common\Mvc\ISelectListHelper.cs" />
     <Compile Include="Common\Mvc\FiltersConfiguration.cs" />
     <Compile Include="Common\Mvc\MenuHelper.cs" />
     <Compile Include="Common\Mvc\RoutesConfiguration.cs" />

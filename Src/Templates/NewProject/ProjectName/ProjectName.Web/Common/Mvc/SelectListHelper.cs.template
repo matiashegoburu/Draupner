@@ -1,0 +1,33 @@
+using System.Linq;
+using System.Web.Mvc;
+using @(Model.CoreNamespace).Common.Model;
+using @(Model.CoreNamespace).Common.Persistence;
+
+namespace @(Model.WebNamespace).Common.Mvc
+{
+    public class SelectListHelper<TRepository, TEntity> : ISelectListHelper<TRepository, TEntity>
+        where TRepository : IRepository<TEntity>
+        where TEntity : class, IValuePairBaseEntity
+    {
+        private readonly TRepository _repository;
+
+        public SelectListHelper(TRepository repository)
+        {
+            _repository = repository;
+        }
+
+        public void Load(ViewDataDictionary viewData)
+        {
+            var items = _repository.FindAll().Select(c => new SelectListItem()
+                                                              {
+                                                                  Text = c.Value,
+                                                                  Value = c.Id.ToString(),
+                                                                  Selected = false,
+                                                              });
+
+            var list = new SelectList(items, "Value", "Text");
+            var key = string.Concat(typeof (TEntity).Name, "List");
+            viewData[key] = list;
+        }
+    }
+}

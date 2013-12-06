@@ -8,7 +8,8 @@ using NHibernate.Linq;
 
 namespace @(Model.CoreNamespace).Common.Persistence.NHibernate
 {
-    public abstract class GenericNHibernateRepository<T> where T : class
+    public abstract class GenericNHibernateRepository<T> : IRepository<T>
+		where T : class
     {
         private readonly NHibernateUnitOfWork unitOfWork;
         protected ISession Session { get { return unitOfWork.Session; } }

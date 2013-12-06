@@ -1,8 +1,10 @@
-﻿using FluentNHibernate.Cfg;
+﻿using FluentNHibernate.Automapping;
+using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Context;
 using NHibernate.Tool.hbm2ddl;
+using @(Model.CoreNamespace).Common.Model;
 
 namespace @(Model.CoreNamespace).Common.NHibernate
 {
@@ -21,7 +23,13 @@ namespace @(Model.CoreNamespace).Common.NHibernate
                 .Database(
                     MsSqlConfiguration.MsSql2008.ConnectionString(c => c.FromConnectionStringWithKey("MainDatabase"))
                 )
-                .Mappings(m => m.FluentMappings.AddFromAssemblyOf<NHibernateConfiguration>())
+                .Mappings(m => 
+                    m.AutoMappings
+                        .Add(AutoMap
+                            .AssemblyOf<IBaseEntity>()
+                            .Where(t => typeof(IBaseEntity).IsAssignableFrom(t))
+                            .AddMappingsFromAssemblyOf<NHibernateConfiguration>()
+                            .UseOverridesFromAssemblyOf<NHibernateConfiguration>()))
                 .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
                 .CurrentSessionContext<WebSessionContext>().BuildSessionFactory();
         }

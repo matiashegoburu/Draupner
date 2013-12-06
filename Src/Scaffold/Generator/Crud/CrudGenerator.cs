@@ -20,7 +20,6 @@ namespace Scaffold.Generator.Crud
         {
             ValidateArgs(args);
 
-            generatorManager.ExecuteGenerator("create-nhibernate-mapping", args);
             generatorManager.ExecuteGenerator("create-repository", args);
             generatorManager.ExecuteGenerator("create-ui-crud", args);
         }

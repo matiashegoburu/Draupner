@@ -40,7 +40,6 @@ namespace Scaffold.Generator.NHibernate
 
             Entity entity = ReadEntity(args);
 
-            GenerateNHibernateMapping(entity);
             GeneratePersistenceTest(entity);
             GenerateAutoFixtureCustomization(entity);
         }

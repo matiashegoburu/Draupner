@@ -1,0 +1,7 @@
+﻿namespace @(Model.CoreNamespace).Common.Model
+{
+    public interface IValuePairBaseEntity : IBaseEntity
+    {
+        string Value { get; set; }
+    }
+}

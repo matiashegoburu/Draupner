@@ -1,0 +1,7 @@
+﻿namespace @(Model.CoreNamespace).Common.Model
+{
+    public interface IBaseEntity
+    {
+        long Id { get; set; }
+    }
+}

@@ -1,6 +1,8 @@
-﻿namespace @(Model.CoreNamespace).Domain.Model
+﻿using @(Model.CoreNamespace).Common.Model;
+
+namespace @(Model.CoreNamespace).Domain.Model
 {
-    public class @(Model.EntityName)
+    public class @(Model.EntityName) : IBaseEntity
     {
         public virtual long Id { get; set; }
     }
